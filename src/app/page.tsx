@@ -8,6 +8,7 @@ import EmailSidebar from "@/components/layout/vertical/EmailSidebar";
 import SocialSidebar from "@/components/layout/vertical/SocialSidebar";
 import AboutSection from "@/components/section/AboutSection";
 import ProjectSection, { Project } from "@/components/section/ProjectSection";
+import Footer from "@/components/layout/Footer";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import Tzens from '../../public/images/projects/tzens.png';
 import Card1 from '../../public/images/cards/01-320x200.jpg';
@@ -253,6 +254,14 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer
+        name="Muhamad Wildan"
+        email="muhamadwildan@example.com"
+        githubUrl="https://github.com/yourusername"
+        linkedinUrl="https://linkedin.com/in/yourusername"
+      />
     </section>
   );
 }
