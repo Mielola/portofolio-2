@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import CardSwap, { Card } from "@/components/CardSwap";
 import LightRays from "@/components/LightRays";
 import LogoLoop from "@/components/LogoLoop";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -8,6 +7,7 @@ import Navbar from "@/components/navbar/navbar";
 import EmailSidebar from "@/components/layout/vertical/EmailSidebar";
 import SocialSidebar from "@/components/layout/vertical/SocialSidebar";
 import AboutSection from "@/components/section/AboutSection";
+import ProjectSection, { Project } from "@/components/section/ProjectSection";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import Tzens from '../../public/images/projects/tzens.png';
 import Card1 from '../../public/images/cards/01-320x200.jpg';
@@ -37,6 +37,63 @@ export default function Home() {
     { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
     { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
     { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  ];
+
+  const projects: Project[] = [
+    {
+      id: 1,
+      title: "Tzens",
+      description: "A modern e-commerce platform built with Next.js and TypeScript, featuring real-time inventory management and seamless checkout experience.",
+      image: Tzens.src,
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma"],
+      liveUrl: "https://tzens.com",
+      githubUrl: "https://github.com/yourusername/tzens",
+    },
+    {
+      id: 2,
+      title: "Netpro Connect",
+      description: "Professional networking application that connects developers and businesses, with real-time messaging and job posting features.",
+      image: Card1.src,
+      techStack: ["React", "Node.js", "MongoDB", "Socket.io"],
+      liveUrl: "https://netpro-connect.com",
+      githubUrl: "https://github.com/yourusername/netpro-connect",
+    },
+    {
+      id: 3,
+      title: "SANTARA",
+      description: "Investment platform for agricultural sector, enabling users to invest in farming projects with transparent returns and impact tracking.",
+      image: Card2.src,
+      techStack: ["Next.js", "TypeScript", "PostgreSQL", "Stripe"],
+      liveUrl: "https://santara.co.id",
+      githubUrl: "https://github.com/yourusername/santara",
+    },
+    {
+      id: 4,
+      title: "Ticketing System",
+      description: "Event ticketing platform with QR code validation, seat selection, and integrated payment gateway for seamless ticket purchasing.",
+      image: Card3.src,
+      techStack: ["React", "Express", "MySQL", "Tailwind CSS"],
+      liveUrl: "https://ticketing-app.com",
+      githubUrl: "https://github.com/yourusername/ticketing",
+    },
+    {
+      id: 5,
+      title: "Portfolio Website",
+      description: "Personal portfolio website showcasing projects and skills with modern animations and responsive design.",
+      image: Card1.src,
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      liveUrl: "https://yourportfolio.com",
+      githubUrl: "https://github.com/yourusername/portfolio",
+    },
+    {
+      id: 6,
+      title: "Task Management App",
+      description: "Collaborative task management tool with kanban boards, team collaboration features, and productivity analytics.",
+      image: Card2.src,
+      techStack: ["React", "Node.js", "MongoDB", "Redux"],
+      liveUrl: "https://taskapp.com",
+      githubUrl: "https://github.com/yourusername/taskapp",
+    },
   ];
 
   return (
@@ -162,85 +219,8 @@ export default function Home() {
       {/* About Section */}
       <AboutSection />
 
-      <div id="projects" className="bg-black h-screen w-full pt-20 p-6">
-        <div className="text-center">
-          <h1 className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500">
-            Gradient title
-          </h1>
-          <h2 className="text-white pt-4 text-3xl font-bold">Featured Case Studies</h2>
-          <p className="text-gray-400 pt-2">A selection of projects I've worked on recently.</p>
-        </div>
-
-        <div className="w-full flex items-center justify-around">
-          <div className="text-white w-full sm:w-1/3">
-            <h1 className="text-2xl sm:text-5xl font-bold">Crafting elegant interfaces with purpose</h1>
-            <p className="text-gray-400 pt-2">
-              Showcasing projects that blend functionality, creativity, and clean design.
-            </p>
-
-            <div>
-              <button className="mt-4 bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-full hover:scale-105 transition-transform duration-300">
-                See All Projects
-              </button>
-            </div>
-          </div>
-          <div style={{ height: '600px', position: 'relative' }}>
-            <CardSwap
-              cardDistance={60}
-              verticalDistance={70}
-              delay={5000}
-              pauseOnHover={false}
-              easing="elastic"
-              width={600}
-            >
-              <Card className="text-white overflow-hidden">
-                <div className="border-b-[0.8px] px-3 py-2 border-white">
-                  <h3>Tzens</h3>
-                </div>
-
-                <img
-                  src={Tzens.src}
-                  alt="Tzens Project"
-                  className="w-full object-cover"
-                />
-              </Card>
-              <Card className="text-white overflow-hidden">
-                <div className="border-b-[0.8px] px-3 py-2 border-white">
-                  <h3>Netpro Connect</h3>
-                </div>
-
-                <img
-                  src={Card1.src}
-                  alt="Tzens Project"
-                  className="w-full object-cover"
-                />
-              </Card>
-              <Card className="text-white overflow-hidden">
-                <div className="border-b-[0.8px] px-3 py-2 border-white">
-                  <h3>SANTARA</h3>
-                </div>
-
-                <img
-                  src={Card2.src}
-                  alt="SANTARA Project"
-                  className="w-full object-cover"
-                />
-              </Card>
-              <Card className="text-white overflow-hidden">
-                <div className="border-b-[0.8px] px-3 py-2 border-white">
-                  <h3>Ticketing</h3>
-                </div>
-
-                <img
-                  src={Card3.src}
-                  alt="Ticketing Project"
-                  className="w-full object-cover"
-                />
-              </Card>
-            </CardSwap>
-          </div>
-        </div>
-      </div>
+      {/* Projects Section */}
+      <ProjectSection projects={projects} />
 
       {/* Contact Section */}
       <div id="contact" className="bg-gradient-to-b from-black to-gray-900 py-20 px-6">

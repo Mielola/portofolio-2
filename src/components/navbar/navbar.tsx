@@ -7,11 +7,17 @@ export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+        // Find the scroll container (section with overflow-scroll)
+        const scrollContainer = document.querySelector("section.overflow-scroll") || document.querySelector("section");
+        
+        if (!scrollContainer) return;
+
         const onScroll = () => {
-            setIsScrolled(window.scrollY > 20);
+            setIsScrolled(scrollContainer.scrollTop > 0);
         };
-        window.addEventListener("scroll", onScroll);
-        return () => window.removeEventListener("scroll", onScroll);
+
+        scrollContainer.addEventListener("scroll", onScroll);
+        return () => scrollContainer.removeEventListener("scroll", onScroll);
     }, []);
 
     const scrollToSection = (sectionId: string) => {
@@ -33,11 +39,11 @@ export default function Navbar() {
 
     return (
         <motion.nav
-            className={`fixed top-5 left-0 w-full z-50 transition-all duration-500 ${isScrolled
-                    ? "backdrop-blur-xl bg-white/10 shadow-lg border-b border-white/10"
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled
+                    ? "backdrop-blur-xl bg-white/10 shadow-lg"
                     : "bg-transparent"
                 }`}
-            initial={{ y: -80 }}
+            initial={{ y: -10 }}
             animate={{ y: 0 }}
         >
             <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
