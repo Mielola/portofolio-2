@@ -8,22 +8,22 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Usman - Full Stack Developer",
+  title: "Muhammad Wildan Dhiya Ulhaq - Full Stack Developer",
   description:
-    "Welcome to my portfolio! I'm Muhammad Usman, a passionate Full Stack Developer...",
+    "Welcome to my portfolio! I'm Muhammad Wildan Dhiya Ulhaq, a passionate Full Stack Developer...",
 
   openGraph: {
-    title: "Muhammad Usman - Full Stack Developer",
+    title: "Muhammad Wildan Dhiya Ulhaq - Full Stack Developer",
     description:
       "Explore my projects, skills, and experience.",
     url: "https://domainkamu.com",
-    siteName: "Muhammad Usman Portfolio",
+    siteName: "Muhammad Wildan Dhiya Ulhaq Portfolio",
     images: [
       {
         url: "/og-image.png", // taruh di folder /public
         width: 1200,
         height: 630,
-        alt: "Muhammad Usman Portfolio",
+        alt: "Muhammad Wildan Dhiya Ulhaq Portfolio",
       },
     ],
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Usman - Full Stack Developer",
+    title: "Muhammad Wildan Dhiya Ulhaq - Full Stack Developer",
     description:
       "Explore my projects, skills, and experience.",
     images: ["/og-image.png"],

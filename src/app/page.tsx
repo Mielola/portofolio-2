@@ -8,6 +8,7 @@ import EmailSidebar from "@/components/layout/vertical/EmailSidebar";
 import SocialSidebar from "@/components/layout/vertical/SocialSidebar";
 import AboutSection from "@/components/section/AboutSection";
 import ProjectSection, { Project } from "@/components/section/ProjectSection";
+import ExperienceSection, { Experience } from "@/components/section/ExperienceSection";
 import Footer from "@/components/layout/Footer";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import Tzens from '../../public/images/projects/tzens.png';
@@ -94,6 +95,57 @@ export default function Home() {
       techStack: ["React", "Node.js", "MongoDB", "Redux"],
       liveUrl: "https://taskapp.com",
       githubUrl: "https://github.com/yourusername/taskapp",
+    },
+  ];
+
+  const experiences: Experience[] = [
+    {
+      id: 1,
+      title: "Senior Frontend Developer",
+      company: "Tech Startup Inc.",
+      companyUrl: "https://techstartup.com",
+      location: "Jakarta, Indonesia",
+      startDate: "Jan 2024",
+      endDate: "Present",
+      description: [
+        "Led the development of a new customer-facing dashboard, improving user engagement by 40%",
+        "Mentored junior developers and conducted code reviews to maintain code quality",
+        "Implemented CI/CD pipelines reducing deployment time by 60%",
+        "Collaborated with design team to create responsive and accessible UI components",
+      ],
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "GraphQL"],
+    },
+    {
+      id: 2,
+      title: "Fullstack Developer",
+      company: "Digital Agency",
+      companyUrl: "https://digitalagency.com",
+      location: "Bandung, Indonesia",
+      startDate: "Jun 2022",
+      endDate: "Dec 2023",
+      description: [
+        "Developed and maintained multiple client projects using React and Node.js",
+        "Built RESTful APIs and integrated third-party services for e-commerce platforms",
+        "Optimized database queries resulting in 50% faster page load times",
+        "Participated in agile ceremonies and sprint planning sessions",
+      ],
+      techStack: ["React", "Node.js", "PostgreSQL", "AWS"],
+    },
+    {
+      id: 3,
+      title: "Junior Web Developer",
+      company: "Software House",
+      companyUrl: "https://softwarehouse.com",
+      location: "Surabaya, Indonesia",
+      startDate: "Jan 2021",
+      endDate: "May 2022",
+      description: [
+        "Assisted in developing web applications using PHP Laravel and Vue.js",
+        "Created responsive landing pages and marketing websites for clients",
+        "Learned best practices in version control and collaborative development",
+        "Contributed to internal tools that improved team productivity",
+      ],
+      techStack: ["Laravel", "Vue.js", "MySQL", "Bootstrap"],
     },
   ];
 
@@ -219,6 +271,9 @@ export default function Home() {
 
       {/* About Section */}
       <AboutSection />
+
+      {/* Experience Section */}
+      <ExperienceSection experiences={experiences} />
 
       {/* Projects Section */}
       <ProjectSection projects={projects} />
